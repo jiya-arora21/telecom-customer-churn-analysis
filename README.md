@@ -1,282 +1,303 @@
-# Why Are Customers Churning?
+# Telecom Customer Churn Analysis & Retention Strategy
 
-### An Exploratory Data Analysis with Business Insights and Retention Strategies
+## Business Analytics Case Study: Statistical Validation, Customer Segmentation, KPI Dashboarding, and Retention Impact Simulation
+
+![Python](https://img.shields.io/badge/Python-Data%20Analysis-blue)
+![Pandas](https://img.shields.io/badge/Pandas-Data%20Preparation-purple)
+![Seaborn](https://img.shields.io/badge/Seaborn-Visualization-teal)
+![SciPy](https://img.shields.io/badge/SciPy-Statistical%20Validation-orange)
+![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard%20In%20Progress-yellow)
+
+## Project Summary
+
+Customer churn is a major business challenge for telecom companies because it directly impacts recurring revenue, customer lifetime value, and customer acquisition costs.
+
+This project analyzes telecom customer churn behavior to identify key churn drivers, validate important patterns statistically, segment high-risk customers, estimate potential retention impact, and translate analytical findings into actionable business strategies.
+
+The project is structured as an end-to-end business analytics case study covering exploratory analysis, statistical validation, customer segmentation, KPI dashboarding, business simulation, and retention strategy development.
 
 ---
 
-## The Business Story
+## Business Problem
 
-Customer churn is one of the most pressing challenges faced by subscription-based businesses, particularly in the telecom industry where customers can easily switch providers. Losing customers affects not only **recurring revenue**, but also **customer lifetime value, acquisition costs, and long-term profitability**.
+Telecom companies operate in a highly competitive environment where retaining existing customers is often more cost-effective than acquiring new customers.
 
-For telecom companies, retaining customers is often more cost-effective than acquiring new ones. However, customer attrition is rarely random — it is often influenced by behavioral patterns, service experience, pricing, and engagement levels.
+The key business problem addressed in this project is:
 
-This project was designed to answer one critical business question:
-
-> **Why do customers churn, and what actions can businesses take to reduce customer attrition?**
-
-Using customer-level telecom data, this analysis explores churn behavior to identify **high-risk customer segments**, uncover hidden churn patterns, and recommend **data-driven retention strategies**.
+**Which customer groups are most likely to churn, what factors are associated with churn behavior, and how can the business prioritize retention strategies to reduce customer attrition?**
 
 ---
 
-## Project Objective
+## Project Objectives
 
-The objective of this project is to analyze customer churn behavior and identify the key factors influencing customer retention.
+The objective of this project is to:
 
-The analysis aims to:
-
-* Identify **customers at high risk of churn**
-* Understand how **service usage and customer behavior** influence retention
-* Analyze the impact of **contracts, payment methods, internet services, pricing, and tenure**
-* Validate observed patterns through **statistical testing**
-* Generate **business recommendations** to improve retention and reduce churn
+- Identify major customer churn drivers.
+- Analyze churn patterns across customer demographics, services, contracts, payments, tenure, and charges.
+- Validate key churn relationships using statistical testing.
+- Build high-risk customer segments based on multiple churn indicators.
+- Estimate potential retention and revenue impact using business simulation.
+- Summarize key business metrics through an executive KPI dashboard.
+- Recommend prioritized retention strategies for business decision-making.
 
 ---
 
 ## Dataset Overview
 
-The analysis uses the **Telco Customer Churn Dataset**, which contains customer-level information related to:
+The dataset contains telecom customer information including demographics, service usage, account details, billing information, and churn status.
 
-* Customer demographics
-* Subscription services
-* Internet service categories
-* Contract types
-* Payment methods
-* Monthly charges and tenure
-* Customer churn status
-
-The dataset consists of both **categorical and numerical variables**, enabling behavioral analysis, customer segmentation, and statistical evaluation of churn patterns.
-
----
-
-# The Analytical Journey
-
-Rather than directly jumping into conclusions, the analysis followed a structured process to understand customer behavior and validate churn patterns systematically.
-
-### 1. Understanding the Data
-
-The project began with an initial exploration of the dataset to understand:
-
-* Dataset structure and feature composition
-* Variable types and customer attributes
-* Churn distribution and class balance
-* Customer behavior patterns across services
-
-This stage helped establish business context and identify relevant variables for deeper analysis.
+| Category | Description |
+|---|---|
+| Customer Records | 7,032 customers analyzed |
+| Target Variable | Churn |
+| Customer Demographics | Senior citizen status, partner, dependents |
+| Service Information | Phone service, internet service, online security, streaming services |
+| Account Information | Contract type, tenure, payment method, paperless billing |
+| Billing Variables | Monthly charges and total charges |
 
 ---
 
-### 2. Data Cleaning & Preparation
+## Tools & Technologies
 
-Before performing analysis, the dataset was cleaned to ensure consistency and analytical reliability.
-
-The preprocessing process included:
-
-* Converting `TotalCharges` into numerical format
-* Identifying missing values
-* Removing a small number of incomplete observations
-* Checking for duplicate records
-* Validating overall data quality
-
-This ensured that subsequent findings were based on reliable and interpretable data.
+| Area | Tools Used |
+|---|---|
+| Programming | Python |
+| Data Analysis | Pandas |
+| Data Visualization | Matplotlib, Seaborn |
+| Statistical Testing | SciPy |
+| Notebook Environment | Google Colab |
+| Version Control | GitHub |
+| BI Dashboard | Power BI dashboard in progress |
 
 ---
 
-### 3. Exploratory Data Analysis (EDA)
+## Analytical Workflow
 
-Once the dataset was prepared, exploratory analysis was performed to uncover customer behavior patterns associated with churn.
-
-#### Univariate Analysis
-
-Initial analysis focused on understanding the distribution of important variables, including:
-
-* Churn distribution
-* Contract type
-* Payment methods
-* Internet services
-* Monthly charges
-* Customer tenure
-
-This provided an overview of customer composition and service behavior.
-
-#### Bivariate Analysis
-
-To understand churn drivers, relationships between customer churn and business variables were analyzed:
-
-* **Contract Type vs Churn**
-* **Payment Method vs Churn**
-* **Internet Service vs Churn**
-* **Monthly Charges vs Churn**
-* **Tenure vs Churn**
-* **Senior Citizen Status vs Churn**
-
-This stage helped identify potential churn indicators and vulnerable customer groups.
-
-#### Multivariate Analysis
-
-To move beyond isolated relationships, multivariate analysis was performed to understand how combinations of variables influenced churn behavior.
-
-The analysis included:
-
-* **Contract Type × Payment Method × Churn**
-* **Internet Service × Contract Type × Churn**
-
-This helped identify customer segments with compounded churn risk rather than relying on single-factor explanations.
+```mermaid
+flowchart TD
+    A[Business Understanding] --> B[Data Loading & Initial Inspection]
+    B --> C[Data Cleaning & Preparation]
+    C --> D[Exploratory Data Analysis]
+    D --> E[Statistical Validation]
+    E --> F[Correlation Analysis]
+    F --> G[High-Risk Customer Segmentation]
+    G --> H[Business Simulation & Retention Impact]
+    H --> I[KPI Dashboard & Executive Metrics]
+    I --> J[Retention Strategy Roadmap]
+    J --> K[Final Business Conclusion]
+```
 
 ---
 
-### 4. Visual Exploration
+## Visual Project Highlights
 
-To better interpret customer behavior patterns, multiple visualizations were created using **Matplotlib** and **Seaborn**.
+The following visuals summarize the most important business findings from the notebook, including churn KPIs, high-risk segment comparison, and contract-based churn behavior.
 
-Visual analysis included:
+### Executive KPI Dashboard
 
-* Count plots
-* Histograms
-* Box plots
-* Comparative churn visualizations
-* Correlation heatmaps
-* Segmentation-based analysis
+The KPI dashboard provides a compact executive view of churn performance, customer retention, high-risk segment exposure, and simulated revenue preservation.
 
-These visualizations helped transform complex customer behavior into intuitive business insights.
+![KPI Dashboard](visuals/kpi_dashboard.png)
 
 ---
 
-# Statistical Validation
+### High-Risk Customer Segment Comparison
 
-While exploratory analysis reveals patterns, statistical testing helps determine whether those patterns are **meaningful or simply random observations**.
+This visual compares churn exposure across the identified high-risk customer segments and highlights where retention efforts should be prioritized first.
 
-To validate findings, inferential statistical methods were applied.
-
-### Confidence Interval Analysis
-
-A **95% confidence interval** was calculated to estimate the likely range of the actual churn rate in the customer population.
-
-This provided a statistically reliable estimate of customer attrition and strengthened confidence in churn measurement.
-
-### Margin of Error Analysis
-
-A **margin of error analysis** was performed to evaluate the precision of churn estimates and assess reliability.
-
-This helped quantify uncertainty around churn estimation.
-
-### Z-Test for Proportion Comparison
-
-To determine whether differences in churn behavior across customer groups were statistically significant, **Z-tests** were conducted for:
-
-* **Senior Citizens vs Non-Senior Citizens**
-* **High Monthly Charges vs Low Monthly Charges**
-
-These tests validated whether churn differences across groups were statistically meaningful.
-
-### Chi-Square Test of Association
-
-To evaluate whether customer churn was significantly associated with service and behavioral variables, **Chi-Square Tests** were performed for:
-
-* **Contract Type vs Churn**
-* **Payment Method vs Churn**
-* **Internet Service vs Churn**
-
-The statistical results confirmed strong relationships between churn behavior and service-related factors.
+![High-Risk Customer Segment Comparison](visuals/high_risk_segment_comparison.png)
 
 ---
 
-# Key Business Insights
+### Churn by Contract Type
 
-The analysis revealed several meaningful churn patterns:
+Contract type emerged as a major churn-associated factor, with month-to-month customers showing substantially higher churn compared to one-year and two-year contract customers.
 
-### High-Risk Customer Segments
-
-Customers belonging to the following groups exhibited the highest churn risk:
-
-* **Month-to-month contract customers**
-* **Electronic check users**
-* **Fiber optic internet users**
-* **Customers with shorter tenure**
-* **Customers with higher monthly charges**
-
-### Major Findings
-
-* Customers on **month-to-month contracts** churn significantly more than long-term contract customers.
-* **Electronic check users** demonstrate higher churn compared to customers using automatic payment methods.
-* **Fiber optic customers**, despite being premium users, exhibit elevated churn risk, suggesting possible dissatisfaction related to pricing, service quality, or customer expectations.
-* Customers with **short tenure** are significantly more vulnerable during the early stages of the customer lifecycle.
-* **Behavioral and service-related factors** influence churn more strongly than demographic characteristics.
+![Churn by Contract Type](visuals/churn_by_contract_type.png)
 
 ---
 
-# Strategic Business Recommendations
+## Key Business Insights
 
-Based on the findings, several targeted retention strategies were identified:
-
-### Strengthen Long-Term Contract Adoption
-
-Encourage customers to transition toward **yearly and long-term contracts** through discounts, loyalty incentives, and bundled offers.
-
-### Improve Fiber Optic Customer Retention
-
-Improve **service quality, customer support, and targeted engagement strategies** for premium fiber optic users.
-
-### Promote Automatic Payment Methods
-
-Encourage customers to adopt **automatic payment systems** to reduce payment friction and improve retention.
-
-### Monitor High-Risk Customer Segments
-
-Proactively identify and monitor customers at high churn risk through behavioral indicators.
-
-### Strengthen Early Customer Engagement
-
-Improve onboarding, early support, and customer engagement during the **first stages of the customer lifecycle**.
-
-### Optimize Pricing for High-Charge Customers
-
-Introduce **flexible pricing models and personalized offers** for price-sensitive customers.
-
-### Develop Personalized Retention Strategies
-
-Adopt **segment-specific retention approaches** rather than one-size-fits-all customer retention efforts.
+- The overall customer churn rate is approximately **26.6%**, meaning nearly one-fourth of the customer base is affected by churn.
+- Customers on **month-to-month contracts** show substantially higher churn compared to customers on one-year and two-year contracts.
+- **Low-tenure customers with high monthly charges** represent the most critical churn-risk segment, with churn reaching approximately **72.7%**.
+- **Fiber optic customers** show elevated churn vulnerability, especially when combined with flexible contracts or high monthly charges.
+- Customers using **electronic check payments** show higher churn compared to customers using automatic payment methods.
+- Statistical testing confirmed that contract type, payment method, internet service category, tenure, monthly charges, and senior citizen status have meaningful relationships with churn behavior.
 
 ---
 
-# Business Impact
+## Statistical Validation
 
-This project demonstrates how **exploratory analytics combined with statistical validation** can help businesses better understand customer churn and make informed retention decisions.
+Statistical tests were applied to validate whether the observed churn patterns were meaningful and unlikely to be driven by random variation alone.
 
-By implementing targeted, data-driven strategies, telecom companies can:
+| Test Used | Purpose |
+|---|---|
+| Chi-Square Test | Tested relationships between categorical variables and churn |
+| Welch’s t-test | Compared numerical variables between churned and retained customers |
 
-* Reduce customer attrition
-* Improve customer retention
-* Increase customer lifetime value
-* Strengthen customer loyalty
-* Stabilize recurring revenue
-* Improve long-term profitability
+The statistical validation supported the reliability of the major churn patterns identified during the analysis.
 
 ---
 
-## Tools & Technologies Used
+## High-Risk Customer Segments
 
-### Programming & Analysis
+High-risk customer segments were created by combining the strongest churn indicators identified during the analysis.
 
-* Python
-* Pandas
-* NumPy
+| Rank | Customer Segment | Churn Rate |
+|---:|---|---:|
+| 1 | Low-Tenure High-Charge Customers | 72.7% |
+| 2 | Month-to-Month Fiber Optic Customers | 54.6% |
+| 3 | High-Charge Month-to-Month Customers | 52.2% |
+| 4 | Senior Citizens Using Fiber Optic | 47.3% |
+| 5 | Premium Fiber Optic Customers | 37.6% |
 
-### Data Visualization
-
-* Matplotlib
-* Seaborn
-
-### Statistical Analysis
-
-* Statsmodels
-* SciPy
-
-### Development Environment
-
-* Google Colab
+The highest-risk segment was selected for deeper retention impact simulation because it showed the strongest churn exposure.
 
 ---
 
-## Project Status
+## Retention Impact Simulation
 
-**Completed — End-to-End Exploratory, Statistical, and Business-Focused Churn Analysis**
+A hypothetical retention intervention was simulated for the highest-risk customer segment.
+
+| Metric | Value |
+|---|---:|
+| Highest-Risk Segment | Low-Tenure High-Charge Customers |
+| Segment Size | 472 customers |
+| Estimated Churn Customers | 343 customers |
+| Simulated Churn Reduction | 15% |
+| Potential Customers Retained | 51 customers |
+| Estimated Monthly Revenue Preserved | 4,638 monetary units |
+
+Revenue values are reported as **monetary units** because the dataset does not explicitly confirm the currency.
+
+---
+
+## KPI Dashboard Summary
+
+The KPI dashboard provides an executive-level view of customer base overview, churn performance, high-risk segment exposure, and simulated retention impact.
+
+| KPI | Value |
+|---|---:|
+| Total Customers | 7,032 |
+| Overall Churn Rate | 26.6% |
+| Retention Rate | 73.4% |
+| Highest-Risk Segment Churn | 72.7% |
+| Potential Customers Retained | 51 |
+| Monthly Revenue Preserved | 4,638 monetary units |
+
+---
+
+## Retention Strategy Roadmap
+
+The roadmap converts the churn analysis into prioritized business actions. Recommendations are ordered by churn severity, high-risk segment concentration, and retention impact potential.
+
+| Priority | Strategic Focus | Target Segment | Recommended Action |
+|---|---|---|---|
+| P1 | Stabilize Early-Stage High-Charge Customers | Low-tenure high-charge customers | Strengthen onboarding, proactive check-ins, and early retention offers |
+| P2 | Convert Flexible Contracts into Long-Term Plans | Month-to-month customers | Offer upgrade incentives, loyalty benefits, and bundled long-term plans |
+| P3 | Optimize Pricing for High-Charge Customers | High monthly charge customers | Introduce targeted discounts, value bundles, and personalized pricing support |
+| P4 | Improve Fiber Optic Customer Experience | Fiber optic and premium-service customers | Strengthen technical support, service monitoring, and premium retention packages |
+| P5 | Build Segment-Based Retention Campaigns | Customers with multiple churn-risk signals | Create targeted campaigns and track retention outcomes by segment |
+| P6 | Promote Automatic Payment Adoption | Electronic check payment users | Simplify auto-pay enrollment and encourage automatic payment methods |
+| P7 | Strengthen Senior Customer Support | Senior customers using premium services | Provide clearer communication, proactive support, and simplified billing assistance |
+
+---
+
+## Repository Structure
+
+```text
+telecom-customer-churn-analysis/
+│
+├── dashboard/
+│   └── Power BI dashboard files will be added here
+│
+├── data/
+│   └── Telco-Customer-Churn.csv
+│
+├── notebooks/
+│   └── telecom_customer_churn_analysis.ipynb
+│
+├── reports/
+│   └── exported reports and summaries will be added here
+│
+├── visuals/
+│   ├── kpi_dashboard.png
+│   ├── high_risk_segment_comparison.png
+│   └── churn_by_contract_type.png
+│
+├── README.md
+└── requirements.txt
+```
+
+---
+
+## How to Run This Project
+
+1. Clone the repository:
+
+```bash
+git clone <repository-url>
+```
+
+2. Install required libraries:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Open the notebook:
+
+```text
+notebooks/telecom_customer_churn_analysis.ipynb
+```
+
+4. Run the notebook cells from top to bottom.
+
+---
+
+## Requirements
+
+The project uses the following Python libraries:
+
+```text
+pandas
+matplotlib
+seaborn
+scipy
+```
+
+---
+
+## Current Project Status
+
+| Component | Status |
+|---|---|
+| Exploratory Data Analysis | Completed |
+| Statistical Validation | Completed |
+| High-Risk Customer Segmentation | Completed |
+| Business Simulation | Completed |
+| KPI Dashboard in Notebook | Completed |
+| Retention Strategy Roadmap | Completed |
+| Power BI Dashboard | In Progress |
+| Final Report Export | Planned |
+
+---
+
+## Future Improvements
+
+- Build an interactive Power BI dashboard for executive reporting.
+- Add Power BI dashboard screenshots to the repository.
+- Export a final business summary report.
+- Extend the project with predictive churn modeling.
+- Develop customer-level churn risk scoring.
+- Compare machine learning models for churn prediction.
+
+---
+
+## Final Business Conclusion
+
+This project shows that churn is not evenly distributed across the customer base. Instead, churn risk is concentrated among specific customer profiles, especially customers with low tenure, high monthly charges, flexible contracts, and premium service usage.
+
+The strongest retention opportunity lies in targeting customers who combine multiple churn-risk signals. A focused, segment-based retention strategy can help reduce avoidable churn, improve customer stability, and protect recurring revenue more effectively than broad retention campaigns.
